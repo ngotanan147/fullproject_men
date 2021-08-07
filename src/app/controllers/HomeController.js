@@ -3,7 +3,7 @@ const Product = require('../model/ProductModel')
 
 const { multipleMongooseToObject } = require('../../ultil/mongoose.js')
 
-class CategoryController {
+class HomeController {
     async index(req, res, next) {
         const products = await Product.find({})
         res.render('home', {
@@ -14,4 +14,4 @@ class CategoryController {
 
 }
 
-module.exports = new CategoryController
+module.exports = new HomeController
