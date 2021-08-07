@@ -1,0 +1,83 @@
+<div class="text-center d-flex pt-3 pb-3 d-flex justify-content-evenly">
+    <div>
+        <button class='btn btn-primary ' data-bs-toggle="modal" data-bs-target="#exampleModal">Add new category</button>
+    </div>
+
+    <form class="d-flex">
+        <input class="form-control me-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
+    </form>
+</div>
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>Name</th>
+                <th>Functions</th>
+            </tr>
+        </thead>
+        <tbody id="customer">
+            {{#each category}}
+            <tr class="text-center" id="{{this._id}}_container">
+                <td id="{{this._id}}_name">{{this.name}}</td>
+                <td>
+                    <button class='btn btn-info edit' data-id="{{this._id}}" data-bs-toggle="modal"
+                        data-bs-target="#editModal">Edit modal</button>
+                    <button class='btn btn-warning detete' data-id="{{this._id}}">Remove</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div class='text-center title d-none'>
+    <h2>Not found!</h2>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-form form-create">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" id="exampleInputPassword"
+                            placeholder="Name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-form edit-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Edit customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" id="exampleInputPassword"
+                            placeholder="Name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

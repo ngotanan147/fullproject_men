@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- link --}}
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/filepond/filepond.css" rel="stylesheet" />
+    <link href="/filepond/filepond-plugin-image-preview.css" rel="stylesheet" />
+    {{!-- script --}}
+    <script defer src="/jquery/jquery.min.js"></script>
+    <script defer src="/jquery/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script defer src="/bootstrap/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script defer src="/filepond/filepond.min.js"></script>
+    <script defer src="/filepond/filepond.jquery.js"></script>
+    <script defer src="/filepond/filepond-plugin-image-preview.js"></script>
+    <script defer src="/filepond/filepond-plugin-file-encode.js"></script>
+    <script defer src="/filepond/filepond-plugin-image-transform.js"></script>
+    <script defer src="/filepond/filepond-plugin-image-resize.js"></script>
+
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script defer src="/filepond/filepond.js"></script>
+    <script defer src="/js/fileupload.js"></script>
+
+    {{!--
+    <script defer src='/js/product.js'></script> --}}
+    <script defer src='/js/{{js}}'></script>
+    <script defer src='/js/index.js'></script>
+
+
+    {{!-- --}}
+    <title>My website</title>
+</head>
+
+<body>
+    {{>header}}
+
+    {{{body}}}
+
+    {{>footer}}
+
+    <script src="/filepond/filepond2.js"></script>
+</body>
+
+</html>

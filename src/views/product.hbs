@@ -1,0 +1,119 @@
+<div class="text-center d-flex pt-3 pb-3 d-flex justify-content-evenly">
+    <div>
+        <button class='btn btn-primary ' data-bs-toggle="modal" data-bs-target="#exampleModal">Add new category</button>
+    </div>
+
+    <form class="d-flex">
+        <input class="form-control me-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
+    </form>
+</div>
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>Name</th>
+                <th>Price</th>
+                <th>Info</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Functions</th>
+            </tr>
+        </thead>
+        <tbody id="customer">
+            {{#each products}}
+            {{this.image}}
+            <tr class="text-center" id="{{this._id}}_container">
+                <td id="{{this._id}}_name">{{this.name}}</td>
+                <td id="{{this._id}}_price">{{this.price}}</td>
+                <td id="{{this._id}}_info">{{this.info}}</td>
+                <td>
+                    <img id="{{this._id}}_image" onerror="this.onerror=null; this.src='/default.jpg'"
+                        src="{{this.imageSrc}}" alt="" width="50px" height="50px">
+                </td>
+                <td id="{{this._id}}_category">{{this.category.name}}</td>
+                <td>
+                    <button class='btn btn-info editProduct' data-id="{{this._id}}" data-bs-toggle="modal"
+                        data-bs-target="#editModal">Edit modal</button>
+                    <button class='btn btn-warning deleteProduct' data-id="{{this._id}}">Remove</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="modal-form form-create product-create" action="/product/create" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" placeholder="Name" value="Cá tra">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input name="price" type="text" class="form-control" placeholder="Price" value="100">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input name="info" type="text" class="form-control" placeholder="Info" value="Ngon">
+                    </div>
+                    <select class="form-select mt-2 select-form" aria-label="Default select example" name="category">
+                        {{!-- render --}}
+                    </select>
+
+                    <div class="form-group mt-2">
+                        <input type="file" class="filepond">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="modal-form form-create product-edit-modal" action="/product/edit" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input name="price" type="text" class="form-control" placeholder="Price">
+                    </div>
+                    <div class="form-group mt-2">
+                        <input name="info" type="text" class="form-control" placeholder="Info">
+                    </div>
+                    <select class="form-select mt-2 select-form" aria-label="Default select example" name="category">
+                        {{!-- render --}}
+                    </select>
+                    <label class='mt-2' for="">Current image</label>
+                    <div class="form-group mt-2 current-image text-center">
+                        <img id="" src="" alt="" width='200px' height='200px'>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="file" class="filepond">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
