@@ -13,7 +13,7 @@ function increase() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "PUT",
-                url: `http://localhost:3000/cart/increase/${id}`,
+                url: `https://fullproject-men.herokuapp.com/cart/increase/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {
@@ -33,7 +33,7 @@ function decrease() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "PUT",
-                url: `http://localhost:3000/cart/decrease/${id}`,
+                url: `https://fullproject-men.herokuapp.com/cart/decrease/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {
@@ -55,7 +55,7 @@ function updateTotalPrice() {
     return (
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/cart/getTotalPrice`,
+            url: `https://fullproject-men.herokuapp.com/cart/getTotalPrice`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -69,7 +69,7 @@ function updatePriceById(id) {
     return (
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/cart/getTotalPriceById/${id}`,
+            url: `https://fullproject-men.herokuapp.com/cart/getTotalPriceById/${id}`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -82,7 +82,7 @@ function updateTotalQuantity() {
     return (
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/cart/getTotalQuantity`,
+            url: `https://fullproject-men.herokuapp.com/cart/getTotalQuantity`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -99,7 +99,7 @@ function deletee() {
             return (
                 $.ajax({
                     type: "DELETE",
-                    url: `http://localhost:3000/cart/delete/${id}`,
+                    url: `https://fullproject-men.herokuapp.com/cart/delete/${id}`,
                     contentType: 'application/json',
                     encode: true,
                 }).done(function (res) {
@@ -123,7 +123,7 @@ function quantityInputOnchange() {
             
             $.ajax({
                 type: "PUT",
-                url: `http://localhost:3000/cart/updateQuantity/${id}/${newQuantity}`,
+                url: `https://fullproject-men.herokuapp.com/cart/updateQuantity/${id}/${newQuantity}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {
@@ -138,7 +138,7 @@ function quantityInputOnchange() {
 
 $.ajax({
     type: "GET",
-    url: `http://localhost:3000/cart/getCart`,
+    url: `https://fullproject-men.herokuapp.com/cart/getCart`,
     contentType: 'application/json',
     encode: true,
 }).done(function (res) {

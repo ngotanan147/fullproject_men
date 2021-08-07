@@ -2,7 +2,7 @@ function updateTotalQuantity() {
     return (
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/cart/getTotalQuantity`,
+            url: `https://fullproject-men.herokuapp.com/cart/getTotalQuantity`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {

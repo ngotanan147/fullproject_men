@@ -10,7 +10,7 @@ $('.form-create').submit(function (e) {
     // console.log(formData)
     $.ajax({
         type: "POST",
-        url: `http://localhost:3000/create`,
+        url: `https://fullproject-men.herokuapp.com/create`,
         contentType: 'application/json',
         data: JSON.stringify(formData),
         encode: true,
@@ -38,7 +38,7 @@ function deletee() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "DELETE",
-                url: `http://localhost:3000/delete/${id}`,
+                url: `https://fullproject-men.herokuapp.com/delete/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {

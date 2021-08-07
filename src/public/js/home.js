@@ -4,7 +4,7 @@ $('.addToCart').click(function () {
     const id = $(this).attr('data-id')
     $.ajax({
         type: "POST",
-        url: `http://localhost:3000/cart/addToCart/${id}`,
+        url: `https://fullproject-men.herokuapp.com/cart/addToCart/${id}`,
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {
@@ -18,7 +18,7 @@ function updateTotalQuantity() {
     return (
         $.ajax({
             type: "GET",
-            url: `http://localhost:3000/cart/getTotalQuantity`,
+            url: `https://fullproject-men.herokuapp.com/cart/getTotalQuantity`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
