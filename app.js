@@ -7,7 +7,7 @@ const db = require('./src/config/db')
 db.connect()
 const app = express()
 route(app)
-const PORT = 3000
+const port = process.env.PORT || 3000
 
 // app.use(express.urlencoded({ extended: false }))
 
@@ -24,5 +24,5 @@ app.set('views', path.join(__dirname, 'src', 'views'))
 //
 
 app.listen(3000, () => {
-    console.log('listening on port ' + PORT)
+    console.log('listening on port: ' + port)
 })
