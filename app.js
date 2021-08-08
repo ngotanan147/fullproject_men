@@ -23,6 +23,6 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'src', 'views'))
 //
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('listening on port: ' + port)
 })
