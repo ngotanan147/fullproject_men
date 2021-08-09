@@ -1,5 +1,6 @@
 // const URL = 'http://localhost:3000/'
-const URL = 'https://fullproject-men.herokuapp.com/'
+const URL = window.location.origin
+console.log(URL)
 
 function format(n) {
     return (n * 1000).toLocaleString('vi', {
@@ -12,7 +13,7 @@ function updateTotalQuantity() {
     return (
         $.ajax({
             type: "GET",
-            url: `${URL}cart/getTotalQuantity`,
+            url: `${URL}//cart/getTotalQuantity`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {

@@ -1,9 +1,8 @@
 
 console.log('product')
-// const URL = 'http://localhost:3000'
 $.ajax({
     type: "GET",
-    url: `${URL}category/getCategory`,
+    url: `${URL}/category/getCategory`,
     contentType: 'application/json',
     encode: true,
 }).done(function (res) {
@@ -42,7 +41,7 @@ function deletee() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "DELETE",
-                url: `${URL}product/delete/${id}`,
+                url: `${URL}/product/delete/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {

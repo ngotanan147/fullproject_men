@@ -4,7 +4,7 @@ $('.addToCart').click(function () {
     const id = $(this).attr('data-id')
     $.ajax({
         type: "POST",
-        url: `${URL}cart/addToCart/${id}`,
+        url: `${URL}/cart/addToCart/${id}`,
         contentType: 'application/json',
         encode: true,
     }).done(function (res) {
@@ -18,7 +18,7 @@ function updateTotalQuantity() {
     return (
         $.ajax({
             type: "GET",
-            url: `${URL}cart/getTotalQuantity`,
+            url: `${URL}/cart/getTotalQuantity`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {

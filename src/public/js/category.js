@@ -10,7 +10,7 @@ $('.form-create').submit(function (e) {
     // console.log(formData)
     $.ajax({
         type: "POST",
-        url: `${URL}create`,
+        url: `${URL}/create`,
         contentType: 'application/json',
         data: JSON.stringify(formData),
         encode: true,
@@ -38,7 +38,7 @@ function deletee() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "DELETE",
-                url: `${URL}delete/${id}`,
+                url: `${URL}/delete/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {

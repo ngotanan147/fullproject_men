@@ -6,7 +6,7 @@ function increase() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "PUT",
-                url: `${URL}cart/increase/${id}`,
+                url: `${URL}/cart/increase/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {
@@ -26,7 +26,7 @@ function decrease() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "PUT",
-                url: `${URL}cart/decrease/${id}`,
+                url: `${URL}/cart/decrease/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {
@@ -48,7 +48,7 @@ function updateTotalPrice() {
     return (
         $.ajax({
             type: "GET",
-            url: `${URL}cart/getTotalPrice`,
+            url: `${URL}/cart/getTotalPrice`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -62,7 +62,7 @@ function updatePriceById(id) {
     return (
         $.ajax({
             type: "GET",
-            url: `${URL}cart/getTotalPriceById/${id}`,
+            url: `${URL}/cart/getTotalPriceById/${id}`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -75,7 +75,7 @@ function updateTotalQuantity() {
     return (
         $.ajax({
             type: "GET",
-            url: `${URL}cart/getTotalQuantity`,
+            url: `${URL}/cart/getTotalQuantity`,
             contentType: 'application/json',
             encode: true,
         }).done(function (res) {
@@ -92,7 +92,7 @@ function deletee() {
             return (
                 $.ajax({
                     type: "DELETE",
-                    url: `${URL}cart/delete/${id}`,
+                    url: `${URL}/cart/delete/${id}`,
                     contentType: 'application/json',
                     encode: true,
                 }).done(function (res) {
@@ -116,7 +116,7 @@ function quantityInputOnchange() {
             
             $.ajax({
                 type: "PUT",
-                url: `${URL}cart/updateQuantity/${id}/${newQuantity}`,
+                url: `${URL}/cart/updateQuantity/${id}/${newQuantity}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {
@@ -131,7 +131,7 @@ function quantityInputOnchange() {
 
 $.ajax({
     type: "GET",
-    url: `${URL}cart/getCart`,
+    url: `${URL}/cart/getCart`,
     contentType: 'application/json',
     encode: true,
 }).done(function (res) {
