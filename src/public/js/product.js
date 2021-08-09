@@ -3,7 +3,7 @@ console.log('product')
 // const URL = 'http://localhost:3000'
 $.ajax({
     type: "GET",
-    url: `https://fullproject-men.herokuapp.com/category/getCategory`,
+    url: `${URL}category/getCategory`,
     contentType: 'application/json',
     encode: true,
 }).done(function (res) {
@@ -42,7 +42,7 @@ function deletee() {
             const id = $(this).attr('data-id')
             $.ajax({
                 type: "DELETE",
-                url: `https://fullproject-men.herokuapp.com/product/delete/${id}`,
+                url: `${URL}product/delete/${id}`,
                 contentType: 'application/json',
                 encode: true,
             }).done(function (res) {

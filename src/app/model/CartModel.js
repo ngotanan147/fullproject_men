@@ -48,10 +48,7 @@ function cart(items) {
     }
 
     this.getTotalQuantity = function () {
-        let totalQuantity = 0
-        if (this.items.length < 1) return 0
-        Array.from(this.items).forEach(item => totalQuantity += item.quantity)
-        return totalQuantity
+        return this.items.length
     }
 
     this.delete = function (id) {

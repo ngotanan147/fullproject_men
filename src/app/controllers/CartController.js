@@ -48,7 +48,6 @@ class CartController {
             const { id } = req.params
             const cart = new Cart(req.session.cart)
             const remainQuantity = cart.decrease(id)
-            console.log(remainQuantity)
             req.session.cart = cart.items
             res.send({ data: remainQuantity, id: id })
         } catch {
@@ -103,7 +102,6 @@ class CartController {
             const { id, newQuantity } = req.params
             const cart = new Cart(req.session.cart)
             const quantity = cart.updateQuantity(id, newQuantity)
-            console.log(quantity)
             req.session.cart = cart.items
             res.send({ data: quantity })
         } catch (e) {
